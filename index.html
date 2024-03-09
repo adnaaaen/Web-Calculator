@@ -11,13 +11,13 @@
         <div class="calc_outline">
             <div class="input-area">
                 <div id="text-area">
-                    <input type="text" name="user-input" id="user-input">
+                    <label for="update-entry" id="user-input"></label>
                 </div>
             </div>
             <div class="buttons">
                 <div class="first-row">
                     <div class="c-button">
-                        <button class="opr">C</button>
+                        <button class="opr" id="c-btn" onclick="clearEntry()">C</button>
                     </div>
                     <div class="plus-or-minus-button">
                         <button class="opr">+/-</button>
@@ -31,10 +31,10 @@
                 </div>
                 <div class="second-row">
                     <div class="7-button">
-                        <button class="inner" value="7">7</button>
+                        <button class="inner" value="7" id="seven-btn" onclick="addExpression('seven-btn')">7</button>
                     </div>
                     <div class="8-button">
-                        <button class="inner" value="8">8</button>
+                        <button class="inner" value="8" id="eight-btn" onclick="addExpression('eight-btn')">8</button>
                     </div>
                     <div class="9-button">
                         <button class="inner" value="9">9</button>
@@ -83,6 +83,7 @@
                 </div>
             </div>
         </div>
-   </div> 
+   </div>
+   <script src="/script.js"></script>
 </body>
 </html>
