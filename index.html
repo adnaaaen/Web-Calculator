@@ -19,14 +19,14 @@
                     <div class="c-button">
                         <button class="opr" id="c-btn" onclick="clearEntry()">C</button>
                     </div>
-                    <div class="plus-or-minus-button">
-                        <button class="opr">+/-</button>
-                    </div>
                     <div class="percentage-button">
                         <button class="opr">%</button>
                     </div>
                     <div class="divide-button">
-                        <button class="opr">/</button>
+                        <button class="opr">÷</button>
+                    </div>
+                    <div class="back-space">
+                         <button id="back-space" class="opr" id="bs-btn" onclick="backSpace()">B</button>
                     </div>
                 </div>
                 <div class="second-row">
@@ -37,35 +37,35 @@
                         <button class="inner" value="8" id="eight-btn" onclick="addExpression('eight-btn')">8</button>
                     </div>
                     <div class="9-button">
-                        <button class="inner" value="9">9</button>
+                        <button class="inner" value="9" id="nine-btn" onclick="addExpression('nine-btn')">9</button>
                     </div>
                     <div class="multiple-button">
-                        <button class="opr">x</button>
+                        <button class="opr" id="mul-btn" value="×" onclick="addExpression('mul-btn')">×</button>
                     </div>
                 </div>
                 <div class="third-row">
                     <div class="4-button">
-                        <button class="inner" value="4">4</button>
+                        <button class="inner" value="4" id="four-btn" onclick="addExpression('four-btn')">4</button>
                     </div>
                     <div class="5-button">
-                        <button class="inner" value="5">5</button>
+                        <button class="inner" value="5" id="five-btn" onclick="addExpression('five-btn')">5</button>
                     </div>
                     <div class="6-button">
-                        <button class="inner" value="6">6</button>
+                        <button class="inner" value="6" id="six-btn" onclick="addExpression('six-btn')">6</button>
                     </div>
                     <div class="substract-button">
-                        <button class="opr">-</button>
+                        <button class="opr">−</button>
                     </div>
                 </div>
                 <div class="fourth-row">
                     <div class="1-button">
-                        <button class="inner" value="1">1</button>
+                        <button class="inner" value="1" id="one-btn" onclick="addExpression('one-btn')">1</button>
                     </div>
                     <div class="2-button">
-                        <button class="inner" value="2">2</button>
+                        <button class="inner" value="2" id="two-btn" onclick="addExpression('two-btn')">2</button>
                     </div>
                     <div class="3-button">
-                        <button class="inner" value="3">3</button>
+                        <button class="inner" value="3" id="three-btn" onclick="addExpression('three-btn')">3</button>
                     </div>
                     <div class="addition-button">
                         <button class="opr">+</button>
@@ -73,13 +73,13 @@
             </div>
             <div class="fifth-row">
                 <div class="zero-button">
-                    <button class="zeroInner" value="0">0</button>
+                    <button class="zeroInner" value="0" id="zero-btn">0</button>
                 </div>
                 <div class="dot-button">
-                    <button class="inner">.</button>
+                    <button class="inner" id="dot-btn">.</button>
                 </div>
                 <div class="equal-button">
-                    <button class="opr">=</button>
+                    <button class="opr" id="eq-btn">=</button>
                 </div>
             </div>
         </div>

@@ -7,7 +7,7 @@ function updateEntry(){
 
 function addExpression(passId){
     let idValue = document.getElementById(passId).value 
-    if (count <= 27)
+    if (count <= 9)
     {
         expression += idValue
         count ++
@@ -19,6 +19,24 @@ function clearEntry(){
     if (expression != ""){
         expression = ""
         count = 0
+        bsCount = 0
         updateEntry()
+    }
+}
+
+bsCount = 1
+function backSpace()
+{
+    if(expression != ""){
+        let exp_len = expression.length
+        if(expression.length != 1)
+        {
+            expression = expression.slice(0, exp_len-bsCount)
+            updateEntry()
+            return
+        }
+        expression = ""
+        updateEntry()
+        return
     }
 }
