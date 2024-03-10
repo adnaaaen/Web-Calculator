@@ -25,10 +25,10 @@
                         <button class="opr" id="c-btn" onclick="clearEntry()">C</button>
                     </div>
                     <div class="percentage-button">
-                        <button class="opr">%</button>
-                    </div>
+                        <button class="opr" value="%" id="per-btn" onclick="addOpr('per-btn')">%</button>
+                    </div>`
                     <div class="divide-button">
-                        <button class="opr" value="/" id="did-btn" onclick="addOpr('did-btn')">÷</button>
+                        <button class="opr" value="÷" id="did-btn" onclick="addOpr('did-btn')">÷</button>
                     </div>
                     <div class="back-space">
                          <button id="back-space" class="opr" id="bs-btn" onclick="backSpace()">B</button>
@@ -81,7 +81,7 @@
                     <button class="zeroInner" value="0" id="zero-btn" onclick="addExpression('zero-btn')">0</button>
                 </div>
                 <div class="dot-button">
-                    <button class="inner" id="dot-btn">.</button>
+                    <button class="inner" id="dot-btn" value="." onclick="addExpression('dot-btn')">.</button>
                 </div>
                 <div class="equal-button">
                     <button class="opr" id="eq-btn" onclick="getResult()">=</button>

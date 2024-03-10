@@ -3,6 +3,7 @@ var globalExpression = ""
 var displayExp = "" 
 var count = 0
 var entryValue = document.getElementById("user-input")
+var dot_click = 0
 
 function updateEntry(){
     entryValue.innerHTML = displayExp
@@ -10,9 +11,24 @@ function updateEntry(){
 }
 
 function addExpression(passId){
-    let idValue = document.getElementById(passId).value 
+    let idValue = document.getElementById(passId).value
     if (count < 10)
     {
+        if(idValue == '.')
+        {
+            if (dot_click == 1)
+            {
+                return
+            }
+            if (displayExp == "")
+            {
+                displayExp += "0."
+                updateEntry()
+                dot_click ++
+                return
+            }
+            dot_click ++
+        }
         displayExp += idValue
         count ++
         updateEntry()
@@ -25,6 +41,7 @@ function clearEntry(){
     displayExp = ""
     opr_show.innerHTML = ""
     opr_show.style.color = 'white'
+    dot_click = 0
     updateEntry()
 }
 
@@ -62,6 +79,10 @@ function addOpr(opr_id)
         if(operand == '×')
         {
             globalExpression += '*'
+        }
+        else if(operand == '÷')
+        {
+            globalExpression += '/'
         }
         else
         {
