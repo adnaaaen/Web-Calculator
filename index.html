@@ -9,6 +9,11 @@
 <body>
    <div class="container">
         <div class="calc_outline">
+            <div class="opr-section">
+                <div class="oprr">
+                    <h2 id="opr-show"></h2>
+                </div>
+            </div>
             <div class="input-area">
                 <div id="text-area">
                     <label for="update-entry" id="user-input"></label>
@@ -23,7 +28,7 @@
                         <button class="opr">%</button>
                     </div>
                     <div class="divide-button">
-                        <button class="opr">÷</button>
+                        <button class="opr" value="/" id="did-btn" onclick="addOpr('did-btn')">÷</button>
                     </div>
                     <div class="back-space">
                          <button id="back-space" class="opr" id="bs-btn" onclick="backSpace()">B</button>
@@ -40,7 +45,7 @@
                         <button class="inner" value="9" id="nine-btn" onclick="addExpression('nine-btn')">9</button>
                     </div>
                     <div class="multiple-button">
-                        <button class="opr" id="mul-btn" value="×" onclick="addExpression('mul-btn')">×</button>
+                        <button class="opr" id="mul-btn" value="×" onclick="addOpr('mul-btn')">×</button>
                     </div>
                 </div>
                 <div class="third-row">
@@ -54,7 +59,7 @@
                         <button class="inner" value="6" id="six-btn" onclick="addExpression('six-btn')">6</button>
                     </div>
                     <div class="substract-button">
-                        <button class="opr">−</button>
+                        <button class="opr" value="-" id="sub-btn" onclick="addOpr('sub-btn')">−</button>
                     </div>
                 </div>
                 <div class="fourth-row">
@@ -68,18 +73,18 @@
                         <button class="inner" value="3" id="three-btn" onclick="addExpression('three-btn')">3</button>
                     </div>
                     <div class="addition-button">
-                        <button class="opr">+</button>
+                        <button class="opr" value="+" id="add-btn" onclick="addOpr('add-btn')">+</button>
                     </div>
             </div>
             <div class="fifth-row">
                 <div class="zero-button">
-                    <button class="zeroInner" value="0" id="zero-btn">0</button>
+                    <button class="zeroInner" value="0" id="zero-btn" onclick="addExpression('zero-btn')">0</button>
                 </div>
                 <div class="dot-button">
                     <button class="inner" id="dot-btn">.</button>
                 </div>
                 <div class="equal-button">
-                    <button class="opr" id="eq-btn">=</button>
+                    <button class="opr" id="eq-btn" onclick="getResult()">=</button>
                 </div>
             </div>
         </div>

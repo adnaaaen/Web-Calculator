@@ -1,42 +1,85 @@
-var expression = ""
+var opr_show = document.getElementById('opr-show')
+var globalExpression = ""
+var displayExp = "" 
 var count = 0
+var entryValue = document.getElementById("user-input")
+
 function updateEntry(){
-    let entryValue = document.getElementById("user-input").innerHTML = expression
+    entryValue.innerHTML = displayExp
     console.log("Entry updated")
 }
 
 function addExpression(passId){
     let idValue = document.getElementById(passId).value 
-    if (count <= 9)
+    if (count < 10)
     {
-        expression += idValue
+        displayExp += idValue
         count ++
         updateEntry()
     }
 }
 
 function clearEntry(){
-    if (expression != ""){
-        expression = ""
-        count = 0
-        bsCount = 0
-        updateEntry()
-    }
+    globalExpression = ""
+    count = 0
+    displayExp = ""
+    opr_show.innerHTML = ""
+    opr_show.style.color = 'white'
+    updateEntry()
 }
 
-bsCount = 1
 function backSpace()
 {
-    if(expression != ""){
-        let exp_len = expression.length
-        if(expression.length != 1)
+    if(globalExpression != ""){
+        let exp_len = globalExpression.length
+        if(globalExpression.length != 1)
         {
-            expression = expression.slice(0, exp_len-bsCount)
+            globalExpression = globalExpression.slice(0, exp_len-1)
             updateEntry()
+            count --
             return
         }
-        expression = ""
+        globalExpression = ""
+        count --
         updateEntry()
         return
     }
+}
+
+function update_after_opr(){
+    displayExp = ""
+    updateEntry()
+    count = 0 
+}
+
+function addOpr(opr_id)
+{
+    var operand = document.getElementById(opr_id).value
+    console.log(operand)
+    if(displayExp != "" || operand == '-')
+    {
+        globalExpression += displayExp
+        if(operand == '×')
+        {
+            globalExpression += '*'
+        }
+        else
+        {
+            globalExpression += operand
+        }
+
+        opr_show.innerHTML = operand
+        update_after_opr()
+    }
+}
+
+function getResult(){
+    globalExpression += displayExp
+    let result = eval(globalExpression)
+    console.log(globalExpression)
+    result = result.toFixed(2)
+    clearEntry()
+    opr_show.innerHTML = 'A'
+    opr_show.style.color = 'rgb(0,200,100)'
+    entryValue.innerHTML = result 
 }
