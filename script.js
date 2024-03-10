@@ -47,16 +47,16 @@ function clearEntry(){
 
 function backSpace()
 {
-    if(globalExpression != ""){
-        let exp_len = globalExpression.length
-        if(globalExpression.length != 1)
+    if(displayExp != ""){
+        let exp_len = displayExp.length
+        if(exp_len != 1)
         {
-            globalExpression = globalExpression.slice(0, exp_len-1)
+            displayExp = displayExp.slice(0, exp_len-1)
             updateEntry()
             count --
             return
         }
-        globalExpression = ""
+        displayExp = ""
         count --
         updateEntry()
         return
